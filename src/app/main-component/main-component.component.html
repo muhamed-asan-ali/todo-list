@@ -1,0 +1,38 @@
+<div class="container">
+
+    <h1> Plan Your Day</h1><br>
+
+    <hr>
+    <br>
+
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+        <div class="form-group">
+          <label for="task" id="TaskName" value="task">Task Name</label>
+          <input  type="text" class="form-control" id="task" placeholder="Enter task" ngModel name="task" required>
+          <small *ngIf="taskForm.invalid && taskForm.dirty" id="emailHelp" class="form-text text-danger">Required</small>
+        </div>
+
+        <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">Submit</button>
+      </form>
+      <br>
+      <hr>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tasks</th>
+            <th scope="col">Status</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let td of storageArray ; index as i">
+            <td>{{td.taskName}}</td>
+            <td><input type="checkbox" id="checkBox" (change)="onCheck(i)" aria-label="Checkbox for following text input"></td>
+            <td><button id="removeButton" class="btn btn-danger btn-sm" (click)="onRemove(i)">( <b>-</b> )</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+</div>

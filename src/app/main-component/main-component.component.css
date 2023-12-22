@@ -1,0 +1,21 @@
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+#submitButton{
+    margin-top: 20px;
+}
+
+#TaskName{
+    margin-bottom: 20px;
+}
+
+#removeButton{
+    margin-left: 10px;
+}
+
+#checkBox{
+    margin-left: 15px;
+}
